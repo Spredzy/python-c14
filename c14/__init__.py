@@ -50,6 +50,8 @@ class C14(object):
             res = self.api.storage.c14.platform.get()
         except slumber.exceptions.HttpClientError as e:
             res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
+            res = self.handle_error(e)
 
         return res
 
@@ -63,6 +65,8 @@ class C14(object):
             res = self.api.storage.c14.platform(id).get()
         except slumber.exceptions.HttpClientError as e:
             res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
+            res = self.handle_error(e)
 
         return res
 
@@ -72,6 +76,8 @@ class C14(object):
         try:
             res = self.api.storage.c14.protocol.get()
         except slumber.exceptions.HttpClientError as e:
+            res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
             res = self.handle_error(e)
 
         return res
@@ -88,6 +94,8 @@ class C14(object):
                                                   'description': description})
         except slumber.exceptions.HttpClientError as e:
             res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
+            res = self.handle_error(e)
 
         return res
 
@@ -100,6 +108,8 @@ class C14(object):
         try:
             res = self.api.storage.c14.safe(uuid).get()
         except slumber.exceptions.HttpClientError as e:
+            res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
             res = self.handle_error(e)
 
         return res
@@ -117,6 +127,8 @@ class C14(object):
                    .patch(name=name, description=description))
         except slumber.exceptions.HttpClientError as e:
             res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
+            res = self.handle_error(e)
 
         return res
 
@@ -126,6 +138,8 @@ class C14(object):
         try:
             res = self.api.storage.c14.safe.get()
         except slumber.exceptions.HttpClientError as e:
+            res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
             res = self.handle_error(e)
 
         return res
@@ -139,6 +153,8 @@ class C14(object):
         try:
             res = self.api.storage.c14.safe(uuid).delete()
         except slumber.exceptions.HttpClientError as e:
+            res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
             res = self.handle_error(e)
 
         return res
@@ -171,6 +187,8 @@ class C14(object):
             res = self.api.storage.c14.safe(safe_id).archive.post(data)
         except slumber.exceptions.HttpClientError as e:
             res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
+            res = self.handle_error(e)
 
         return res
 
@@ -184,6 +202,8 @@ class C14(object):
         try:
             res = self.api.storage.c14.safe(safe_id).archive(uuid).get()
         except slumber.exceptions.HttpClientError as e:
+            res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
             res = self.handle_error(e)
 
         return res
@@ -202,6 +222,8 @@ class C14(object):
                    .patch(name=name, description=description))
         except slumber.exceptions.HttpClientError as e:
             res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
+            res = self.handle_error(e)
 
         return res
 
@@ -214,6 +236,8 @@ class C14(object):
         try:
             res = self.api.storage.c14.safe(safe_id).archive.get()
         except slumber.exceptions.HttpClientError as e:
+            res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
             res = self.handle_error(e)
 
         return res
@@ -228,6 +252,8 @@ class C14(object):
         try:
             res = self.api.storage.c14.safe(safe_id).archive(uuid).delete()
         except slumber.exceptions.HttpClientError as e:
+            res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
             res = self.handle_error(e)
 
         return res
@@ -244,6 +270,8 @@ class C14(object):
                    .post())
         except slumber.exceptions.HttpClientError as e:
             res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
+            res = self.handle_error(e)
 
         return res
 
@@ -259,6 +287,8 @@ class C14(object):
                    .get())
         except slumber.exceptions.HttpClientError as e:
             res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
+            res = self.handle_error(e)
 
         return res
 
@@ -272,6 +302,8 @@ class C14(object):
         try:
             res = self.api.storage.c14.safe(safe_id).archive(uuid).job.get()
         except slumber.exceptions.HttpClientError as e:
+            res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
             res = self.handle_error(e)
 
         return res
@@ -289,6 +321,8 @@ class C14(object):
                    .job(job_id).get())
         except slumber.exceptions.HttpClientError as e:
             res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
+            res = self.handle_error(e)
 
         return res
 
@@ -302,6 +336,8 @@ class C14(object):
         try:
             res = self.api.storage.c14.safe(safe_id).archive(uuid).key.get()
         except slumber.exceptions.HttpClientError as e:
+            res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
             res = self.handle_error(e)
 
         return res
@@ -320,6 +356,8 @@ class C14(object):
                    .post(data))
         except slumber.exceptions.HttpClientError as e:
             res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
+            res = self.handle_error(e)
 
         return res
 
@@ -333,6 +371,8 @@ class C14(object):
         try:
             res = self.api.storage.c14.safe(safe_id).archive(uuid).key.delete()
         except slumber.exceptions.HttpClientError as e:
+            res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
             res = self.handle_error(e)
 
         return res
@@ -349,6 +389,8 @@ class C14(object):
                    .get())
         except slumber.exceptions.HttpClientError as e:
             res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
+            res = self.handle_error(e)
 
         return res
 
@@ -363,6 +405,8 @@ class C14(object):
             res = (self.api.storage.c14.safe(safe_id).archive(uuid)
                    .location(location_id).get())
         except slumber.exceptions.HttpClientError as e:
+            res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
             res = self.handle_error(e)
 
         return res
@@ -379,6 +423,8 @@ class C14(object):
             res = (self.api.storage.c14.safe(safe_id).archive(uuid)
                    .location(location_id).verify.post())
         except slumber.exceptions.HttpClientError as e:
+            res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
             res = self.handle_error(e)
 
         return res
@@ -407,6 +453,8 @@ class C14(object):
             res = (self.api.storage.c14.safe(safe_id).archive(uuid).unarchive
                    .post(data))
         except slumber.exceptions.HttpClientError as e:
+            res = self.handle_error(e)
+        except slumber.exceptions.HttpServerError as e:
             res = self.handle_error(e)
 
         return res
