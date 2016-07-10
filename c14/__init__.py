@@ -124,7 +124,7 @@ class C14(object):
 
         try:
             res = (self.api.storage.c14.safe(uuid)
-                   .patch(name=name, description=description))
+                   .patch({'name': name, 'description': description}))
         except slumber.exceptions.HttpClientError as e:
             res = self.handle_error(e)
         except slumber.exceptions.HttpServerError as e:
@@ -208,7 +208,7 @@ class C14(object):
 
         return res
 
-    def update_archive(self, uuid, name=None, description=None):
+    def update_archive(self, safe_id, uuid, name=None, description=None):
         """Edit an archive.
 
         :param safe_id: Id of the safe.
@@ -218,8 +218,8 @@ class C14(object):
         """
 
         try:
-            res = (self.api.storage.c14.safe(uuid)
-                   .patch(name=name, description=description))
+            res = (self.api.storage.c14.safe(safe_id).archive(uuid)
+                   .patch({'name': name, 'description': description}))
         except slumber.exceptions.HttpClientError as e:
             res = self.handle_error(e)
         except slumber.exceptions.HttpServerError as e:
