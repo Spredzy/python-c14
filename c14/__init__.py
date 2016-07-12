@@ -122,9 +122,12 @@ class C14(object):
         :param description: Description of the safe.
         """
 
+        data = {'name': name,
+                'description': description}
+
+        data = dict((k, v) for k, v in data.iteritems() if v is not None)
         try:
-            res = (self.api.storage.c14.safe(uuid)
-                   .patch({'name': name, 'description': description}))
+            res = (self.api.storage.c14.safe(uuid).patch(data))
         except slumber.exceptions.HttpClientError as e:
             res = self.handle_error(e)
         except slumber.exceptions.HttpServerError as e:
@@ -217,9 +220,13 @@ class C14(object):
         :param description: Description of the archive.
         """
 
+        data = {'name': name,
+                'description': description}
+
+        data = dict((k, v) for k, v in data.iteritems() if v is not None)
         try:
             res = (self.api.storage.c14.safe(safe_id).archive(uuid)
-                   .patch({'name': name, 'description': description}))
+                   .patch(data))
         except slumber.exceptions.HttpClientError as e:
             res = self.handle_error(e)
         except slumber.exceptions.HttpServerError as e:
